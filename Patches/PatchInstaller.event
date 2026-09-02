@@ -1,0 +1,5 @@
+#include "AutoRefreshingWeapons/AutoRefreshingWeapons.event"
+#include "BattleBGMByChapter/Installer.event"
+#include "ContinueBattleBGM/Installer.event"
+#include "ExtendWeaponDescBox/Installer.event"
+#include "PrepBGMByChapter/EA.event"

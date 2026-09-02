@@ -1,0 +1,89 @@
+## KlausLike1ID
+Ambition[X]
+
+## KlausLike2ID
+Horses[X]
+
+## KlausDislike1ID
+Responsibility[X]
+
+## KlausDislike2ID
+[X]
+
+## KlausAgeID
+20[X]
+
+## KlausHeightID
+5'8"[X]
+
+## ElemerLike1ID
+The art of war[X]
+
+## ElemerLike2ID
+Landscapes[X]
+
+## ElemerDislike1ID
+Delicate tasks[X]
+
+## ElemerDislike2ID
+[X]
+
+## ElemerAgeID
+30[X]
+
+## ElemerHeightID
+6'2"[X]
+
+## DelilahLike1ID
+Birds[X]
+
+## DelilahLike2ID
+Fish[X]
+
+## DelilahDislike1ID
+The dark[X]
+
+## DelilahDislike2ID
+Sharp objects[X]
+
+## DelilahAgeID
+20[X]
+
+## DelilahHeightID
+5'7"[X]
+
+## QuailLike1ID
+Competition[X]
+
+## QuailLike2ID
+Novelty[X]
+
+## QuailDislike1ID
+Forethought[X]
+
+## QuailDislike2ID
+Uneventful days[X]
+
+## QuailAgeID
+19[X]
+
+## QuailHeightID
+5'8"[X]
+
+## SimonLike1ID
+Theater[X]
+
+## SimonLike2ID
+Wordplay[X]
+
+## SimonDislike1ID
+Magic[X]
+
+## SimonDislike2ID
+The ocean[X]
+
+## SimonAgeID
+24[X]
+
+## SimonHeightID
+6'0"[X]

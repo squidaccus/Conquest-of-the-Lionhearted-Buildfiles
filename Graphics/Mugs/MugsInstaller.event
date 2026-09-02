@@ -1,0 +1,25 @@
+ALIGN 4
+KlausPortrait:
+#incext PortraitFormatter "KlausPortrait.png"
+
+setMugEntry(0x2,KlausPortrait,3,5,3,6) //Example use of setMugEntry
+
+ElemerPortrait:
+#incext PortraitFormatter "ElemerPortrait.png"
+
+setMugEntry(0x4,ElemerPortrait,3,5,3,3) //Example use of setMugEntry
+
+DelilahPortrait:
+#incext PortraitFormatter "DelilahPortrait.png"
+
+setMugEntry(0x5,DelilahPortrait,3,6,3,4) //Example use of setMugEntry
+
+QuailPortrait:
+#incext PortraitFormatter "QuailPortrait.png"
+
+setMugEntry(0x6,QuailPortrait,3,6,3,4) //Example use of setMugEntry
+
+SimonPortrait:
+#incext PortraitFormatter "SimonPortrait.png"
+
+setMugEntry(0x7,SimonPortrait,3,5,3,3) //Example use of setMugEntry

@@ -1,0 +1,148 @@
+
+////////////////////////////////////////////////////
+//                                                //
+// Disassembled with Nintenlord's Event Assembler //
+// Version: 11.0.0.0                              //
+// Game: FE8                                      //
+// File: FE8_clean.gba                            //
+// Offset: $9EC66C                                //
+//                                                //
+////////////////////////////////////////////////////
+
+EventPointerTable(0x7, PointerList)
+
+#ifdef DRAGON_VEINS
+VeinEffect(0, FreezeAllEnemies)
+#endif // DRAGON_VEINS
+
+setText(0x160, NewChName)
+
+ALIGN 4
+NewChName:
+String("Bart Simpson")
+BYTE 0
+
+ALIGN 4
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno1 Dunno2 Dunno3 Tutorial
+POIN Traps1 Traps2
+POIN Units1 Units1  //This unit group determines the number and position of deployment slots when there is a prep screen
+POIN $0 $0 $0
+POIN $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Vendor(ShopItems,2,7)
+Armory(ArmoryItems,10,26)
+Seize(10,2)
+DurabilityChest(SkillScroll,CelerityID,11,23)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno1:
+END_MAIN
+
+Dunno2:
+END_MAIN
+
+Dunno3:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+Units1:
+UNIT Klaus  0x2 0x1 Level(1,Ally,0)   [8,22] 0x0 0x0 0x0 0x0 [0x1,0x2d,0x6C,0x0] [0x0,0x0,0x0,0x0]
+UNIT Elemer  0x7 0x1 Level(1,Ally,0)   [9,22] 0x0 0x0 0x0 0x0 [0x4,0x14,0x6D,0x0] [0x0,0x0,0x0,0x0]
+UNIT Delilah  0x74 0x1 Level(3,Ally,0)   [7,22] 0x0 0x0 0x0 0x0 [0x4a,0x45,0x6C,0x0] [0x0,0x0,0x0,0x0]
+UNIT Quail  0x10 0x1 Level(3,Ally,0)   [8,21] 0x0 0x0 0x0 0x0 [0x1,0x5,0x3,0x6C] [0x0,0x0,0x0,0x0]
+UNIT Simon  0x5 0x1 Level(2,Ally,0)   [9,21] 0x0 0x0 0x0 0x0 [0x20,0x27,0x6C,0x0] [0x0,0x0,0x0,0x0]
+UNIT
+
+EnemyUnits:
+UNIT 0x80 0x13 0x1 Level(20,Enemy,1)    [9,18] 0b 0x0 0x0 0x0 [0x1,0x0,0x0,0x0] [0x3,0x3,0x4,0x20]
+UNIT 0x80 0xf 0x1 Level(20,Enemy,1)    [11,18] 0b 0x0 0x0 0x0 [0x3,0x0,0x0,0x0] [0x3,0x3,0x4,0x20]
+UNIT 0x80 0x6 0x1 Level(20,Enemy,1)    [7,18] 0b 0x0 0x0 0x0 [0x1c,0x0,0x0,0x0] [0x3,0x3,0x4,0x20]
+UNIT
+
+Traps1:
+ENDTRAP
+ALIGN 4
+
+Traps2:
+ENDTRAP
+ALIGN 4
+
+BeginningScene:
+ENUT 0x1 //no more boss quotes
+ENUT 0x2 //no more death quotes
+LOAD1 0x1 EnemyUnits
+ENUN
+LOAD1 0x0 Units1 //0x0 instead of 0x1 seems to be for allies on maps with prep screens
+ENUN
+// FADI 10
+// MOVE 0 Carlyle [7,10]
+// ENUN
+//   StartBattle //scripted fight setup
+//   MissedAttack(0,0) //Seth misses
+//   NormalDamage(1,0) //Valter hits
+//   EndAttack
+// FIG1 Carlyle Aias 0
+// STAL 60
+// FADU 10
+GotoPrepScreen
+
+EndingScene:
+ASMC 0x85C71 0x381F5 0x37CF9 //show records screen
+STAL 120
+EVBIT_F 0x2
+MNTS 0x1 //return to title screen
+NoFade
+ENDA
+
+LABEL 0
+	// end
+	
+	Text(HouseText)
+	
+	NoFade
+	ENDA
+	
+	// HouseEvent(HouseText, HouseBG)
+
+#ifdef DRAGON_VEINS
+FreezeAllEnemies:
+VeinActivation
+ASMC FreezeAllASMC|1
+NoFade
+ENDA
+#endif // DRAGON_VEINS
+
+TalkEvent:
+Text(0xc0a)
+NoFade
+ENDA
+
+ShopItems:
+SHLI Thunder Elfire Nosferatu Divine Mend Physic PureWater Elixir
+ALIGN 4
+
+ArmoryItems:
+
+BYTE SteelAxe 0
+BYTE SkillScroll 20
+SHLI SteelLance SteelBow SteelSword HandAxe Javelin
+ALIGN 4

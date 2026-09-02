@@ -1,0 +1,7 @@
+ALIGN 4
+RemnantWalk:
+#incext Png2Dmp --lz77 "RemnantWalk.png"
+
+ALIGN 4
+RemnantStand:
+#incext Png2Dmp --lz77 "RemnantStand.png"

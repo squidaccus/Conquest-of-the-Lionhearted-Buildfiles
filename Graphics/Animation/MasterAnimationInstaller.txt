@@ -1,0 +1,58 @@
+#ifndef ClassAnimTable
+  #ifdef _FE8_
+    #define ClassAnimTable (0xc00008-0x20)
+  #endif
+  #ifdef _FE7_
+    #define ClassAnimTable (0xe00008-0x20)
+  #endif
+#endif
+
+#define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
+#define animSword 0
+#define animLance 1
+#define animAxe 2
+#define animBow 3
+#define animStaff 4
+#define animAnima 5
+#define animLight 6
+#define animDark 7
+#define animNone 9
+#define weaponTypeAnim(weaponType, ID) "BYTE weaponType 1 ID 0;"
+#define weaponAnim(weaponID, ID) "BYTE weaponID 0 ID 0;"
+#define weaponAnimEnd "WORD 0"
+#define SetAnimationPointers(class, pointer) "PUSH; ORG 0x807110 + (class*84) + 52; POIN pointer; POP"
+
+//////////////Installed animations go here:
+{
+  #include "KlausLord\Sword\Sword Installer.event"
+  #include "KlausLord\Bow\Bow Installer.event"
+  #include "KlausLord\Unarmed\Unarmed Installer.event"
+}
+{
+  #include "ElemerPaladin\Sword\Sword Installer.event"
+  #include "ElemerPaladin\Lance\Lance Installer.event"
+  #include "ElemerPaladin\Unarmed\Unarmed Installer.event"
+}
+{
+  #include "Remnant\Magic\Magic Installer.event"
+}
+
+ALIGN 4
+KlausLordAnims:
+AddClassAnimation(0x1,0,1) //sword
+AddClassAnimation(0x2,3,1) //bow
+AddClassAnimation(0x3,9,1) //unarmed
+EndClassAnimation //Mark end of animation assignment
+
+ALIGN 4
+ElemerPaladinAnims:
+AddClassAnimation(0x4,0,1) //sword
+AddClassAnimation(0x5,1,1) //lance
+AddClassAnimation(0x6,9,1) //unarmed
+EndClassAnimation //Mark end of animation assignment
+
+ALIGN 4
+DelilahRemnantAnims:
+AddClassAnimation(0x7,7,1) //dark
+AddClassAnimation(0x7,9,1) //unarmed
+EndClassAnimation //Mark end of animation assignment

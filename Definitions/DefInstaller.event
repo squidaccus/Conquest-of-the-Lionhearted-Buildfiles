@@ -1,0 +1,5 @@
+#include "CharDefs.event"
+#include "MusicDefs.event"
+#include "APDefs.event"
+
+#define StandingMapSpriteTable NewStandingSpriteTable
